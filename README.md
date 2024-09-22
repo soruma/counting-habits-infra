@@ -1,14 +1,37 @@
-# Welcome to your CDK TypeScript project
+# counting-habits-infra
 
-This is a blank project for CDK development with TypeScript.
+## Deploy manual
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+### Create certificate
 
-## Useful commands
+```
+aws iot create-keys-and-certificate \
+    --set-as-active \
+    --certificate-pem-outfile counting-habits-certificate.crt.pem \
+    --public-key-outfile counting-habits-public.key \
+    --private-key-outfile counting-habits-private.key
+```
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+Used when deploying `certificateArn`.
+
+### Deploy
+
+```
+pnpm dlx cdk deploy \
+    --context certArn=${certificateArn}  \
+    --context topicName=${topicName}
+```
+
+## Destroy manual
+
+### Remove certificat
+
+```
+delete_counting_habits_certificate.sh
+```
+
+### Destroy
+
+```
+pnpm dlx cdk destroy
+```
