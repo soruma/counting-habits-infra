@@ -1,8 +1,8 @@
 {
-  "name": "counting_habits_infra",
+  "name": "counting-habits-infra",
   "version": "0.1.0",
   "bin": {
-    "counting_habits_infra": "bin/counting_habits_infra.js"
+    "counting-habits-infra": "bin/counting-habits-infra.js"
   },
   "scripts": {
     "build": "tsc",

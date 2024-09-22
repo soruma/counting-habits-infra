@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { CountingHabitsInfraStack } from '../lib/counting_habits_infra-stack';
+import { CountingHabitsInfraStack } from '../lib/counting-habits-infra-stack';
 
 const app = new cdk.App();
 new CountingHabitsInfraStack(app, 'CountingHabitsInfraStack', {
