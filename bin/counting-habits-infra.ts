@@ -10,5 +10,6 @@ new CountingHabitsInfraStack(app, 'CountingHabitsInfraStack', {
     region: process.env.CDK_DEFAULT_REGION
   },
   certArn: app.node.tryGetContext('certArn'),
-  topicName: app.node.tryGetContext('topicName')
+  topicName: app.node.tryGetContext('topicName'),
+  s3BucketName: app.node.tryGetContext('s3BucketName'),
 });

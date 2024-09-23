@@ -18,8 +18,9 @@ Used when deploying `certificateArn`.
 
 ```
 pnpm dlx cdk deploy \
-    --context certArn=${certificateArn}  \
-    --context topicName=${topicName}
+    --context certArn=${certificateArn} \
+    --context topicName=${topicName} \
+    --context s3BucketName=${s3BucketName}
 ```
 
 ## Destroy manual
