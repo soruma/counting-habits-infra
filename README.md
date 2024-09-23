@@ -7,9 +7,10 @@
 ```
 aws iot create-keys-and-certificate \
     --set-as-active \
-    --certificate-pem-outfile counting-habits-certificate.crt.pem \
+    --certificate-pem-outfile counting-habits-certificate.pem.crt \
     --public-key-outfile counting-habits-public.key \
-    --private-key-outfile counting-habits-private.key
+    --private-key-outfile counting-habits-private.key \
+    > certs-and-keys.json
 ```
 
 Used when deploying `certificateArn`.

@@ -10,3 +10,4 @@ cdk.out
 # Privete files
 *.key
 *.pem
+*.crt
