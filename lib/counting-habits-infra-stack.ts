@@ -38,7 +38,7 @@ export class CountingHabitsInfraStack extends cdk.Stack {
             key: '${topic()}/${timestamp()}'
           }
         }],
-        sql: `SELECT * FROM '${props.topicName}'`
+        sql: `SELECT * FROM '${props.topicName}/+'`
       }
     });
   }
@@ -90,7 +90,7 @@ export class CountingHabitsInfraStack extends cdk.Stack {
             'iot:Receive'
           ],
           resources: [
-            `arn:aws:iot:${env.region!}:${env.account!}:topic/${topicName}`
+            `arn:aws:iot:${env.region!}:${env.account!}:topic/${topicName}/*`
           ]
         }),
         new iam.PolicyStatement({
@@ -99,7 +99,7 @@ export class CountingHabitsInfraStack extends cdk.Stack {
             'iot:Subscribe',
           ],
           resources: [
-            `arn:aws:iot:${env.region!}:${env.account!}:topic/${topicName}`
+            `arn:aws:iot:${env.region!}:${env.account!}:topic/${topicName}/*`
           ]
         })
       ]
